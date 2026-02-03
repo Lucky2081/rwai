@@ -14,7 +14,6 @@ const navItems = [
   { key: 'framework', href: '/framework' },
   { key: 'faq', href: '/faq' },
   { key: 'about', href: '/about' },
-  { key: 'contact', href: '/contact' },
 ] as const;
 
 export function Header() {

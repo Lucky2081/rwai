@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Github } from 'lucide-react';
@@ -59,7 +61,7 @@ export function Footer({ locale }: { locale: string }) {
               </li>
               <li>
                 <a
-                  href="mailto:contactmx@163.com"
+                  href="mailto:xuyuyao@tsinghua-zj.edu.cn"
                   className="text-sm text-text-secondary hover:text-primary transition-colors"
                 >
                   {t('contactUs')}

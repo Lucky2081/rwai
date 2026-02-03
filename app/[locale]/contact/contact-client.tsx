@@ -92,11 +92,11 @@ export default function ContactClient({ locale }: ContactClientProps) {
 
               <div className="text-center">
                 <a
-                  href="mailto:contactmx@163.com"
+                  href="mailto:xuyuyao@tsinghua-zj.edu.cn"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-all shadow-sm hover:shadow-md"
                 >
                   <Mail className="h-5 w-5" />
-                  contactmx@163.com
+                  xuyuyao@tsinghua-zj.edu.cn
                 </a>
               </div>
             </div>
@@ -119,110 +119,148 @@ export default function ContactClient({ locale }: ContactClientProps) {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="bg-white rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm">
               {submitted ? (
-                <div className="text-center py-12">
+                <div className="text-center py-8">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
                     <CheckCircle className="h-8 w-8 text-green-600" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                    {isChina ? '消息已发送！' : 'Message Sent!'}
+                    {isChina ? '提交成功！' : 'Message Sent!'}
                   </h3>
                   <p className="text-slate-600">
                     {isChina
-                      ? '感谢您的留言，我们会尽快回复您。'
-                      : 'Thank you for your message. We\'ll get back to you soon.'}
+                      ? '感谢您的留言，我们会尽快回复您'
+                      : 'Thank you for your message. We will get back to you soon.'}
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                        {isChina ? '姓名' : 'Name'} *
+                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                        {isChina ? '姓名' : 'Name'}
                       </label>
                       <input
                         type="text"
-                        id="name"
                         name="name"
-                        required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder={isChina ? '您的姓名' : 'Your name'}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder={isChina ? '请输入您的姓名' : 'Enter your name'}
                       />
                     </div>
-
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                        {isChina ? '邮箱' : 'Email'} *
+                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                        {isChina ? '邮箱' : 'Email'}
                       </label>
                       <input
                         type="email"
-                        id="email"
                         name="email"
-                        required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder={isChina ? 'your@email.com' : 'your@email.com'}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder={isChina ? '请输入您的邮箱' : 'Enter your email'}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
-                      {isChina ? '主题' : 'Subject'} *
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      {isChina ? '主题' : 'Subject'}
                     </label>
                     <input
                       type="text"
-                      id="subject"
                       name="subject"
-                      required
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder={isChina ? '您想咨询什么？' : 'What is this about?'}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      placeholder={isChina ? '请输入主题' : 'Enter subject'}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                      {isChina ? '消息' : 'Message'} *
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      {isChina ? '消息' : 'Message'}
                     </label>
                     <textarea
-                      id="message"
                       name="message"
-                      required
-                      rows={6}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                      placeholder={isChina ? '请描述您的需求或问题...' : 'Please describe your inquiry or question...'}
+                      required
+                      rows={6}
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                      placeholder={isChina ? '请输入您的消息' : 'Enter your message'}
                     />
                   </div>
 
-                  <div className="flex justify-end">
-                    <button
-                      type="submit"
-                      disabled={submitting}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white rounded-xl transition-all shadow-sm hover:shadow-md disabled:cursor-not-allowed"
-                    >
-                      {submitting ? (
-                        <>
-                          <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                          {isChina ? '发送中...' : 'Sending...'}
-                        </>
-                      ) : (
-                        <>
-                          <Send className="h-5 w-5" />
-                          {isChina ? '发送消息' : 'Send Message'}
-                        </>
-                      )}
-                    </button>
-                  </div>
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white rounded-xl transition-all"
+                  >
+                    {submitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        {isChina ? '提交中...' : 'Sending...'}
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-5 w-5" />
+                        {isChina ? '发送消息' : 'Send Message'}
+                      </>
+                    )}
+                  </button>
                 </form>
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Contact Options */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+              {isChina ? '其他联系方式' : 'Other Ways to Connect'}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="bg-slate-50 rounded-2xl p-8 text-center">
+                <MessageSquare className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  {isChina ? 'GitHub' : 'GitHub'}
+                </h3>
+                <p className="text-slate-600 mb-4">
+                  {isChina ? '访问我们的开源项目' : 'Visit our open source project'}
+                </p>
+                <a
+                  href="https://github.com/THU-ZJAI/Real-World-AI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-medium"
+                >
+                  GitHub →
+                </a>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-8 text-center">
+                <Mail className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  {isChina ? '邮件' : 'Email'}
+                </h3>
+                <p className="text-slate-600 mb-4">
+                  {isChina ? '发送邮件给我们' : 'Send us an email'}
+                </p>
+                <a
+                  href="mailto:xuyuyao@tsinghua-zj.edu.cn"
+                  className="text-blue-600 hover:text-blue-700 font-medium"
+                >
+                  xuyuyao@tsinghua-zj.edu.cn
+                </a>
+              </div>
             </div>
           </div>
         </div>

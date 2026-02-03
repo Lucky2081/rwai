@@ -12,11 +12,10 @@ export const dynamicParams = false;
 export async function generateStaticParams() {
   const locales = ['en', 'zh'];
 
-  // Generate params for both id and folderId (since the page supports both)
   const params = locales.flatMap((locale) =>
     arenas.map((arena) => ({
       locale,
-      id: arena.folderId, // Use folderId as the primary route param
+      id: arena.folderId,
     }))
   );
 
@@ -41,15 +40,17 @@ export default async function ArenaDetailPage({
   }
 
   // Load all content server-side
-  const tabs = ['overview', 'implementation', 'requirements', 'validation-report', 'project-report'] as const;
+  const tabs = ['overview', 'implementation', 'tech-configuration', 'requirements', 'validation-report', 'project-report'] as const;
   const content: Record<string, string> = {};
-  let hasContent = false;
+  let hasContent = arena.hasContent || false;
 
-  for (const tab of tabs) {
-    const result = await getArenaContent(id, tab, locale);
-    if (result) {
-      content[tab] = result.content;
-      hasContent = true;
+  // Only load content files if hasContent is true
+  if (hasContent) {
+    for (const tab of tabs) {
+      const result = await getArenaContent(id, tab, locale);
+      if (result) {
+        content[tab] = result.content;
+      }
     }
   }
 

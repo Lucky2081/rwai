@@ -69,7 +69,7 @@ export default function AboutClient({ locale }: AboutClientProps) {
               <p className="text-slate-700 leading-relaxed">
                 {isChina
                   ? '团队聚焦真实场景AI与人交互的"人在回路"（HITL）技术研究和应用，致力于推动人工智能前沿技术在金融、能源、社会治理等产业领域的技术创新和深度应用，曾为国内外数十家知名专业公司提供服务。团队成员来自牛津大学、清华大学、哥伦比亚大学等知名高校以及微软、平安、百度等企业的人工智能专家，承接多项国家、国际重大产业创新课题，并为海内外多家企业提供产业智能化技术方案。'
-                  : 'The team focuses on research and application of "Human-in-the-Loop" (HITL) technology for AI-human interaction in real-world scenarios. We are committed to promoting technological innovation and deep application of cutting-edge AI technologies in industrial fields such as finance, energy, and social governance, and have served dozens of well-known professional companies at home and abroad. Team members come from AI experts from renowned universities such as Oxford University, Tsinghua University, and Columbia University, as well as companies like Microsoft, Ping An, and Baidu. We undertake multiple national and international major industrial innovation projects and provide intelligent technology solutions for many domestic and overseas enterprises.'}
+                  : 'The team focuses on research and application of \"Human-in-the-Loop\" (HITL) technology for AI-human interaction in real-world scenarios. We are committed to promoting technological innovation and deep application of cutting-edge AI technologies in industrial fields such as finance, energy, and social governance, and have served dozens of well-known professional companies at home and abroad. Team members come from AI experts from renowned universities such as Oxford University, Tsinghua University, and Columbia University, as well as companies like Microsoft, Ping An, and Baidu. We undertake multiple national and international major industrial innovation projects and provide intelligent technology solutions for many domestic and overseas enterprises.'}
               </p>
             </div>
 
@@ -90,12 +90,12 @@ export default function AboutClient({ locale }: AboutClientProps) {
                   </p>
                   <p className="text-slate-700 leading-relaxed text-sm mb-3">
                     {isChina
-                      ? '《麻省理工科技评论》"全球35岁以下科技创新35人"'
+                      ? '《麻省理工科技评论》\"全球35岁以下科技创新35人\"'
                       : 'Named to the MIT Technology Review\'s "Global 35 Innovators Under 35"'}
                   </p>
                   <p className="text-slate-600 leading-relaxed text-sm">
                     {isChina
-                      ? '徐亮博士本科毕业于清华大学，在牛津大学取得博士学位。承担从国家到地方的多个重大项目，为数十家企业提供人工智能解决方案。曾任平安集团混合增强智能部门负责人、总工程师，三次获"中国人工智能最高奖"吴文俊科学技术奖、央行金融科技发展奖，在ACL、《柳叶刀》子刊等发表多篇论文，与CFA等国际机构联合发表多篇专著，获100项以上授权专利。'
+                      ? '徐亮博士本科毕业于清华大学，在牛津大学取得博士学位。承担从国家到地方的多个重大项目，为数十家企业提供人工智能解决方案。曾任平安集团混合增强智能部门负责人、总工程师，三次获\"中国人工智能最高奖\"吴文俊科学技术奖、央行金融科技发展奖，在ACL、《柳叶刀》子刊等发表多篇论文，与CFA等国际机构联合发表多篇专著，获100项以上授权专利。'
                       : 'Dr. Xu Liang received his bachelor\'s degree from Tsinghua University and his Ph.D. from Oxford University. He has led multiple major projects from national to local levels, provided AI solutions for dozens of enterprises, and previously served as the head and chief engineer of Ping An Group\'s Hybrid Augmented Intelligence Department. He has won the "Chinese AI Highest Award" Wu Wenjun Science and Technology Award three times, the PBOC Financial Technology Development Award, published multiple papers in ACL and The Lancet sub-journals, jointly published multiple monographs with international institutions such as CFA, and obtained over 100 authorized patents.'}
                   </p>
                 </div>
@@ -105,21 +105,44 @@ export default function AboutClient({ locale }: AboutClientProps) {
         </div>
       </section>
 
-      {/* Contact Us */}
+      {/* Contact Us - Email Section */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              {isChina ? '联系我们' : 'Contact Us'}
-            </h2>
-            <div className="mt-8">
-              <a
-                href="mailto:contactmx@163.com"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-all"
-              >
-                <Mail className="h-5 w-5" />
-                contactmx@163.com
-              </a>
+          <div className="mx-auto max-w-3xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+                {isChina ? '联系我们' : 'Contact Us'}
+              </h2>
+              <p className="text-lg text-slate-600">
+                {isChina
+                  ? '我们随时准备回答您的问题，听取您的建议，并与您探讨合作机会。'
+                  : 'We are ready to answer your questions, hear your suggestions, and explore collaboration opportunities.'}
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-600 mb-4">
+                  <Mail className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                  {isChina ? '发送邮件' : 'Send Us an Email'}
+                </h3>
+                <p className="text-slate-600">
+                  {isChina
+                    ? '我们通常在 1-2 个工作日内回复邮件'
+                    : 'We typically respond to emails within 1-2 business days'}
+                </p>
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="mailto:xuyuyao@tsinghua-zj.edu.cn"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-all shadow-sm hover:shadow-md"
+                >
+                  <Mail className="h-5 w-5" />
+                  xuyuyao@tsinghua-zj.edu.cn
+                </a>
+              </div>
             </div>
           </div>
         </div>
