@@ -8,7 +8,7 @@ export default function TermsOfServicePage() {
   const locale = useLocale();
   const isChina = locale === 'zh';
 
-  const lastUpdated = isChina ? '2025年1月30日' : 'January 30, 2025';
+  const lastUpdated = isChina ? '2026年1月30日' : 'January 30, 2026';
 
   return (
     <div className="w-full">
@@ -329,8 +329,8 @@ export default function TermsOfServicePage() {
           </p>
           <p className="text-sm text-slate-500">
             {isChina
-              ? '本条款最后更新于 2025年1月30日，并可能会不时更新。'
-              : 'These terms were last updated on January 30, 2025, and may be updated from time to time.'}
+              ? '本条款最后更新于 2026年1月30日，并可能会不时更新。'
+              : 'These terms were last updated on January 30, 2026, and may be updated from time to time.'}
           </p>
         </div>
       </section>
